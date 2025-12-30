@@ -18,7 +18,20 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f8f9fa;
-            padding-bottom: 80px; /* Espaço para o botão fixo */
+            padding-bottom: 100px; /* Espaço para o botão do WhatsApp */
+        }
+
+        /* Imagem do Carrossel Ocupando Tudo */
+        .carousel-item {
+            background-color: #000;
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 480px;
+            object-fit: contain;
+            display: block;
+            background: #000;
         }
 
         .hero-section {
@@ -29,129 +42,133 @@
             border-bottom-right-radius: 20px;
         }
 
-        .badge-promo {
-            background-color: var(--primary-color);
-            font-weight: bold;
-            padding: 8px 15px;
-            border-radius: 50px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-        }
-
         .price-tag {
-            font-size: 2rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: var(--primary-color);
         }
 
-        .old-price {
-            text-decoration: line-through;
-            color: #6c757d;
-            font-size: 1.1rem;
-        }
-
+        /* Cards de Informação Técnica */
         .spec-card {
             background: white;
-            border-radius: 15px;
+            border-radius: 12px;
             padding: 15px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.05);
             height: 100%;
+            border: 1px solid #eee;
         }
 
         .spec-card i {
             color: var(--dark-bg);
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
         }
 
-        .carousel-item img {
-            border-radius: 15px;
-            object-fit: cover;
-            height: 250px;
-        }
-
-        .whatsapp-fixed {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            background-color: var(--whatsapp-color);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            border-radius: 50px;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            z-index: 1000;
-            transition: transform 0.3s;
-        }
-
-        .whatsapp-fixed:hover {
-            transform: scale(1.05);
-            color: white;
-        }
-
-        .android-feature {
-            background: linear-gradient(135deg, #2c3e50, #000000);
-            color: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        .location-tag {
-            display: inline-flex;
-            align-items: center;
-            color: #6c757d;
+        /* Nota Sutil Android Auto */
+        .android-note {
+            background-color: #e9ecef;
+            border-left: 4px solid #2c3e50;
+            padding: 12px;
+            border-radius: 8px;
             font-size: 0.9rem;
-            margin-top: 10px;
         }
+
+        /* Galeria no Final */
+        .gallery-preview {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1 / 1;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Lightbox Modal */
+        .modal-content {
+            background-color: rgba(0,0,0,0.95);
+            border: none;
+        }
+        
+        .modal-body {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 85vh;
+        }
+
+        #modalImage {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .btn-nav {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .btn-prev { left: 10px; }
+        .btn-next { right: 10px; }
     </style>
+    <!-- Open Graph para preview em redes sociais -->
+    <meta property="og:image" content="https://gamaroque.github.io/venda-seat-ibiza/img/carrocel/banner-venda.jpg" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:title" content="Venda SEAT IBIZA ST - Oportunidade" />
+    <meta property="og:description" content="SEAT IBIZA ST 1.2 TDI à venda. Oportunidade única! Veja fotos, detalhes e faça sua proposta." />
 </head>
 <body>
-
-    <!-- Header / Hero -->
-    <div class="hero-section text-center">
-        <div class="container">
-            <span class="badge-promo mb-2">🔥 Promoção Imperdível</span>
-            <h1 class="h3 mb-0">SEAT IBIZA ST 1.2 TDI</h1>
-            <p class="mb-0 opacity-75">Reference E-E • 75 cv</p>
-            <div class="location-tag">
-                <i class="fas fa-map-marker-alt me-2 text-danger"></i> Póvoa de Varzim, Porto
+    <!-- Carrossel de Destaque (3 fotos) -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="img/carrocel/banner-venda.jpg">
+            </div>
+            <div class="carousel-item">
+                <img src="img/carrocel/01.webp">
+            </div>
+            <div class="carousel-item">
+                <img src="img/carrocel/02.webp">
             </div>
         </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
     </div>
 
     <div class="container mt-4">
-        <!-- Galeria de Imagens (Placeholders) -->
-        <div id="carGallery" class="carousel slide mb-4" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=1000&auto=format&fit=crop" class="d-block w-full" alt="Seat Ibiza ST Frente">
-                </div>
-                <!-- Substitua estes SRCs pelas suas fotos após o upload -->
-                <div class="carousel-item">
-                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1000&auto=format&fit=crop" class="d-block w-full" alt="Interior">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carGallery" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carGallery" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
+        <!-- Preço e Chamada -->
+        <div class="text-center mb-4">
+            <p class="text-muted text-decoration-line-through mb-0 small">Valor de Mercado: €7.900</p>
+            <div class="price-tag mb-1">€6.900</div>
+            <p class="text-success fw-bold small"><i class="fas fa-check-circle me-1"></i>Preço Promocional</p>
+            <p class="text-muted small mt-2"><i class="fas fa-handshake text-primary me-1"></i>Aberto a negociação.<br /> <strong>Não aceito trocas, apenas pagamento.</strong></p>
         </div>
 
-        <!-- Preço -->
-        <div class="card border-0 shadow-sm rounded-4 p-4 text-center mb-4">
-            <p class="old-price mb-0">Valor de Mercado: €7.900</p>
-            <div class="price-tag">€6.800</div>
-            <p class="text-muted small">Carro de família muito bem conservado</p>
-        </div>
-
-        <!-- Specs Rápidas -->
+        <!-- Dados do Veículo (Grid Reintroduzido) -->
         <div class="row g-3 mb-4">
             <div class="col-6">
                 <div class="spec-card">
@@ -176,56 +193,124 @@
             </div>
             <div class="col-6">
                 <div class="spec-card">
-                    <i class="fas fa-wrench"></i>
+                    <i class="fas fa-tools"></i>
                     <div class="small text-muted">Manutenção</div>
                     <div class="fw-bold">Regular</div>
                 </div>
             </div>
-        </div>
-
-        <!-- Destaque Android Auto -->
-        <div class="android-feature shadow">
-            <div class="d-flex align-items-center mb-2">
-                <i class="fab fa-android fa-2x me-3 text-success"></i>
-                <h3 class="h5 mb-0">Upgrade Tecnológico</h3>
+            <div class="col-6">
+                <div class="spec-card">
+                    <i class="fas fa-cogs"></i>
+                    <div class="small text-muted">Cilindradas</div>
+                    <div class="fw-bold">1200 cc</div>
+                </div>
             </div>
-            <p class="small mb-0 opacity-75">
-                Equipado com Sistema Android Auto de última geração: Ecrã de 9", 8GB RAM e Processador QuadCore. Máxima fluidez para Waze, Spotify e Google Maps. (Opcional)
+            <div class="col-6">
+                <div class="spec-card">
+                    <i class="fas fa-bolt"></i>
+                    <div class="small text-muted">Potência</div>
+                    <div class="fw-bold">75 cv</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nota Sutil Android Auto -->
+        <div class="android-note mb-4 shadow-sm">
+            <div class="d-flex align-items-center">
+                <i class="fab fa-android text-success me-2"></i>
+                <div>
+                    Sistema Multimédia Android 14 com ecrã de 9" QLED, 8GB RAM e QuadCore disponível (opcional).
+                </div>
+            </div>
+        </div>
+
+        <!-- Descrição do Veículo -->
+        <div class="mb-4">
+            <span class="fw text-success">Informações Relevantes:</span>
+            <p class="text-secondary">
+                Viatura de cariz familiar, muito bem conservada e com poucas marcas de uso. O motor 1.2 TDI é extremamente económico, ideal para o dia a dia. Manutenções realizadas regularmente, garantindo a fiabilidade do veículo.
             </p>
         </div>
 
-        <!-- Descrição -->
-        <div class="mt-4 px-2">
-            <h4 class="h5 fw-bold">Sobre este carro</h4>
-            <p class="text-secondary">
-                Carrinha familiar muito estimada, utilizada principalmente para trajetos diários. O motor 1.2 TDI é conhecido pelos seus consumos extremamente baixos e fiabilidade. 
-                Sempre assistida regularmente, o interior apresenta poucos sinais de uso e a pintura está em excelente estado.
-            </p>
-            <ul class="text-secondary small">
-                <li>Modelo: Seat Ibiza ST (Carrinha)</li>
-                <li>Versão: Reference E-E</li>
-                <li>Pneus em bom estado</li>
-                <li>Interior limpo e higienizado</li>
+        <div class="mt-3">
+            <span class="fw text-danger">Pontos de atenção:</span>
+            <ul class="text-danger small mb-0">
+                <li>Pneus gastos (substituição necessária em breve).</li>
+                <li>Alguns detalhes e riscos na pintura, normais da idade.</li>
             </ul>
+        </div>
+
+        <!-- Galeria de Fotos Completa -->
+        <div class="gallery-preview" id="galleryPreview"></div>
+    </div>
+
+    <!-- Modal Lightbox (Visualizador) -->
+    <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body position-relative">
+                    <img src="" id="modalImage" alt="Imagem Ampliada">
+                    <button class="btn-nav btn-prev" onclick="changeImage(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <button class="btn-nav btn-next" onclick="changeImage(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- WhatsApp CTA Fixo -->
-    <!-- Substitua o número abaixo pelo seu (formato: 351912345678) -->
-    <a href="https://wa.me/351XXXXXXXXX?text=Olá! vi o anúncio do Seat Ibiza ST e gostaria de marcar uma visita." class="whatsapp-fixed">
-        <i class="fab fa-whatsapp me-2"></i> TENHO INTERESSE / FALAR AGORA
-    </a>
+    <!-- Mensagem de chamada final -->
+    <div class="container mt-5 mb-2 text-center">
+        <div style="font-size:2.2rem; font-weight: bold; color: #e63946;">
+            Não perca tempo, faça sua melhor proposta!
+        </div>
+    </div>
 
-    <!-- Bootstrap Bundle JS -->
+
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Função simples para avisar que o vendedor deve atualizar o link
-        document.querySelector('.whatsapp-fixed').addEventListener('click', function(e) {
-            if (this.getAttribute('href').includes('XXXXXXXXX')) {
-                e.preventDefault();
-                alert('Não te esqueças de editar o código e colocar o teu número de telemóvel no link do WhatsApp!');
-            }
+        // Lista de URLs das fotos (substitua pelos links das suas fotos reais)
+        const allPhotos = [
+            ...Array.from({length: 39}, (_, i) => `img/galeria/${String(i+1).padStart(2, '0')}.webp`)
+        ];
+
+        // Gerar miniaturas dinamicamente na galeria
+        const galleryPreview = document.getElementById('galleryPreview');
+        allPhotos.forEach((photo, idx) => {
+            const div = document.createElement('div');
+            div.className = 'gallery-item';
+            div.onclick = () => openLightbox(idx);
+            const img = document.createElement('img');
+            img.src = photo;
+            img.alt = `Foto ${idx+1}`;
+            img.loading = 'lazy';
+            div.appendChild(img);
+            galleryPreview.appendChild(div);
         });
+
+        let currentImgIndex = 0;
+        const modalImg = document.getElementById('modalImage');
+        const lightboxModal = new bootstrap.Modal(document.getElementById('lightboxModal'));
+
+        function openLightbox(index) {
+            currentImgIndex = index;
+            updateModalImage();
+            lightboxModal.show();
+        }
+
+        function changeImage(step) {
+            currentImgIndex += step;
+            if (currentImgIndex >= allPhotos.length) currentImgIndex = 0;
+            if (currentImgIndex < 0) currentImgIndex = allPhotos.length - 1;
+            updateModalImage();
+        }
+
+        function updateModalImage() {
+            modalImg.src = allPhotos[currentImgIndex];
+        }
     </script>
 </body>
 </html>

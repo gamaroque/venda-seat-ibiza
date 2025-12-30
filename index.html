@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venda SEAT IBIZA ST - Oportunidade</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #e63946;
+            --whatsapp-color: #25d366;
+            --dark-bg: #1d3557;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            padding-bottom: 80px; /* Espaço para o botão fixo */
+        }
+
+        .hero-section {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 20px 0;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .badge-promo {
+            background-color: var(--primary-color);
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        .price-tag {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+
+        .spec-card {
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+
+        .spec-card i {
+            color: var(--dark-bg);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .carousel-item img {
+            border-radius: 15px;
+            object-fit: cover;
+            height: 250px;
+        }
+
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background-color: var(--whatsapp-color);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-fixed:hover {
+            transform: scale(1.05);
+            color: white;
+        }
+
+        .android-feature {
+            background: linear-gradient(135deg, #2c3e50, #000000);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .location-tag {
+            display: inline-flex;
+            align-items: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Hero -->
+    <div class="hero-section text-center">
+        <div class="container">
+            <span class="badge-promo mb-2">🔥 Promoção Imperdível</span>
+            <h1 class="h3 mb-0">SEAT IBIZA ST 1.2 TDI</h1>
+            <p class="mb-0 opacity-75">Reference E-E • 75 cv</p>
+            <div class="location-tag">
+                <i class="fas fa-map-marker-alt me-2 text-danger"></i> Póvoa de Varzim, Porto
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4">
+        <!-- Galeria de Imagens (Placeholders) -->
+        <div id="carGallery" class="carousel slide mb-4" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=1000&auto=format&fit=crop" class="d-block w-full" alt="Seat Ibiza ST Frente">
+                </div>
+                <!-- Substitua estes SRCs pelas suas fotos após o upload -->
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1000&auto=format&fit=crop" class="d-block w-full" alt="Interior">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carGallery" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carGallery" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+
+        <!-- Preço -->
+        <div class="card border-0 shadow-sm rounded-4 p-4 text-center mb-4">
+            <p class="old-price mb-0">Valor de Mercado: €7.900</p>
+            <div class="price-tag">€6.800</div>
+            <p class="text-muted small">Carro de família muito bem conservado</p>
+        </div>
+
+        <!-- Specs Rápidas -->
+        <div class="row g-3 mb-4">
+            <div class="col-6">
+                <div class="spec-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <div class="small text-muted">Ano</div>
+                    <div class="fw-bold">2014</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="spec-card">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <div class="small text-muted">Kms</div>
+                    <div class="fw-bold">210.000</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="spec-card">
+                    <i class="fas fa-gas-pump"></i>
+                    <div class="small text-muted">Combustível</div>
+                    <div class="fw-bold">Gasóleo</div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="spec-card">
+                    <i class="fas fa-wrench"></i>
+                    <div class="small text-muted">Manutenção</div>
+                    <div class="fw-bold">Regular</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Destaque Android Auto -->
+        <div class="android-feature shadow">
+            <div class="d-flex align-items-center mb-2">
+                <i class="fab fa-android fa-2x me-3 text-success"></i>
+                <h3 class="h5 mb-0">Upgrade Tecnológico</h3>
+            </div>
+            <p class="small mb-0 opacity-75">
+                Equipado com Sistema Android Auto de última geração: Ecrã de 9", 8GB RAM e Processador QuadCore. Máxima fluidez para Waze, Spotify e Google Maps. (Opcional)
+            </p>
+        </div>
+
+        <!-- Descrição -->
+        <div class="mt-4 px-2">
+            <h4 class="h5 fw-bold">Sobre este carro</h4>
+            <p class="text-secondary">
+                Carrinha familiar muito estimada, utilizada principalmente para trajetos diários. O motor 1.2 TDI é conhecido pelos seus consumos extremamente baixos e fiabilidade. 
+                Sempre assistida regularmente, o interior apresenta poucos sinais de uso e a pintura está em excelente estado.
+            </p>
+            <ul class="text-secondary small">
+                <li>Modelo: Seat Ibiza ST (Carrinha)</li>
+                <li>Versão: Reference E-E</li>
+                <li>Pneus em bom estado</li>
+                <li>Interior limpo e higienizado</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- WhatsApp CTA Fixo -->
+    <!-- Substitua o número abaixo pelo seu (formato: 351912345678) -->
+    <a href="https://wa.me/351XXXXXXXXX?text=Olá! vi o anúncio do Seat Ibiza ST e gostaria de marcar uma visita." class="whatsapp-fixed">
+        <i class="fab fa-whatsapp me-2"></i> TENHO INTERESSE / FALAR AGORA
+    </a>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Função simples para avisar que o vendedor deve atualizar o link
+        document.querySelector('.whatsapp-fixed').addEventListener('click', function(e) {
+            if (this.getAttribute('href').includes('XXXXXXXXX')) {
+                e.preventDefault();
+                alert('Não te esqueças de editar o código e colocar o teu número de telemóvel no link do WhatsApp!');
+            }
+        });
+    </script>
+</body>
+</html>
